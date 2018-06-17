@@ -7,15 +7,13 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-      desired_item = req.params["items"]
-      binding.pry
-       if @@items.collect { |item|
-         if item.name == desired_item
-           item_price = item.price
-           resp.write "The price is: #{item_price}"
-         end
-        }
-      else
+      desired_item = req.path.split("/items/").last
+      item = @@songs.find{|i| i.name == desired_item}
+
+      if item
+        item_price = item.price
+        resp.write "The price is: #{item_price}"
+      else 
         resp.write "Item not found"
         resp.status = 404
       end
