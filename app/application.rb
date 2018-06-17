@@ -15,6 +15,8 @@ class Application
      else
        resp.write "We don't have that item"
      end
+   else
+     resp.write "Error message"
     end
   end
 end
