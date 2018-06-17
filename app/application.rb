@@ -10,6 +10,7 @@ class Application
       desired_item = req.params["items"]
 
        if @@items.collect { |item|
+         binding.pry
          if item.name == desired_item
            item_price = item.price
            resp.write "The price is: #{item_price}"
