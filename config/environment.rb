@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'pry'
+require_relative 'pry'
 Bundler.require
 
 require_relative "../app/item.rb"
