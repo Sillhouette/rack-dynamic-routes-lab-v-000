@@ -7,7 +7,7 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path.match(/items/)
-       item = req.params["item"]
+       item = req.params["items"]
 
        if @@items.include?(item)
          item_price = item.price
