@@ -14,7 +14,7 @@ class Application
          resp.write "The price is: #{item_price}"
        else
          resp.write "Route not found"
-      resp.status = 404
+         resp.status = 404
        end
 
     else
