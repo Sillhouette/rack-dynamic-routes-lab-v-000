@@ -23,14 +23,5 @@ class Application
       resp.status = 404
     end
     resp.finish
-    #if req.path == "/items"
-    #   item = req.params["items"]
-
-
-
-    #else
-    #  resp.write "Route not found"
-    #  resp.status = 404
-    #end
   end
 end
