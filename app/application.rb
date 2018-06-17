@@ -1,4 +1,4 @@
-include 'pry'
+include pry
 class Application
 
   @@items = []
