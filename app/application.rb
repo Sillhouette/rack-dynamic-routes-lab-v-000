@@ -9,14 +9,16 @@ class Application
     if req.path.match(/items/)
       desired_item = req.params["items"]
 
-       @@items.each { |item|
+       if @@items.collect { |item|
          if item.name == desired_item
            item_price = item.price
            resp.write "The price is: #{item_price}"
          end
-      }
-      resp.write "Item not found"
-      resp.status = 404
+        }
+      else
+        resp.write "Item not found"
+        resp.status = 404
+      end
     else
       resp.write "Route not found"
       resp.status = 404
