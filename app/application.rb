@@ -9,8 +9,8 @@ class Application
     if req.path.match(/items/)
       desired_item = req.params["items"]
 
+        binding.pry
        if @@items.collect { |item|
-         binding.pry
          if item.name == desired_item
            item_price = item.price
            resp.write "The price is: #{item_price}"
