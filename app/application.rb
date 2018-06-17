@@ -6,6 +6,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
+      binding.pry
     if req.path.match(/items/)
       desired_item = req.params["items"]
 
