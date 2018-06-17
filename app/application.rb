@@ -8,8 +8,8 @@ class Application
 
     if req.path.match(/items/)
       item = req.params["items"]
-      
-       if @@items.include?(item)
+
+       if @@items.include?(item.name == item)
          item_price = item.price
          resp.write "The price is: #{item_price}"
        else
