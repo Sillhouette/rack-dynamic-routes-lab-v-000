@@ -13,7 +13,7 @@ class Application
       if item
         item_price = item.price
         resp.write "The price is: #{item_price}"
-      else 
+      else
         resp.write "Item not found"
         resp.status = 404
       end
