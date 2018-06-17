@@ -1,4 +1,3 @@
-include pry
 class Application
 
   @@items = []
