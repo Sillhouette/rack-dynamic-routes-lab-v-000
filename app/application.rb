@@ -7,19 +7,26 @@ class Application
     req = Rack::Request.new(env)
 
     if req.path == "/items"
-       item = req.params["items"]
-
-       if @@items.include?(item)
-         item_price = item.price
-         resp.write "The price is: #{item_price}"
-       else
-         resp.write "Route not found"
-         resp.status = 404
-       end
 
     else
       resp.write "Route not found"
       resp.status = 404
     end
+
+    #if req.path == "/items"
+    #   item = req.params["items"]
+
+    #   if @@items.include?(item)
+    #     item_price = item.price
+    #     resp.write "The price is: #{item_price}"
+    #   else
+    #     resp.write "Route not found"
+    #     resp.status = 404
+    #   end
+
+    #else
+    #  resp.write "Route not found"
+    #  resp.status = 404
+    #end
   end
 end
